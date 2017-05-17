@@ -1,0 +1,79 @@
+$dropdown-height: 2.25rem
+$dropdown-content__height: 10rem
+$dropdown-chooser-width: 22px
+$color__item-hover: rgb(214, 115, 35)
+$dropdown-content__line-height: 25px
+$size-6: 20px
+$white: #fff
+$grey-light: #DCDADB
+$grey: #414141
+$transition__default: all .2s ease
+$shadow__small: 0 6px 12px rgba(0,0,0,.175)
+
+.ng2-simple-dropdown
+    position: relative
+    box-sizing: inherit
+    width: 100%
+    height: $dropdown-height
+    display: flex
+    align-items: center
+    justify-content: center
+    
+
+    &__input
+        flex-grow: 1
+        height: inherit
+        width: calc(#{$dropdown-chooser-width} - 100%)
+        border-top-left-radius: 3px
+        border-bottom-left-radius: 3px
+        border: none
+        box-shadow: inset 0 0 2px #000
+        line-height: $dropdown-content__line-height
+        font-size: $size-6
+        padding: 7px 15px 7px 15px
+
+        &:disabled
+          color: rgb(84, 84, 84)
+    
+    &__content
+        z-index: 10 !important
+        width: inherit
+        position: absolute
+        top: calc(#{$dropdown-height} + 3px)
+        height: auto
+        max-height: $dropdown-content__height
+        background-color: $white
+        border-radius: 3px
+        box-shadow: $shadow__small
+        overflow-x: auto
+        display: flex
+        flex-direction: column
+        padding: 5px 0 5px 0
+
+        hr
+            margin: 0
+
+        &-item
+            line-height: 35px
+            padding: 0 15px 0 15px
+            cursor: pointer
+
+            &:hover
+                color: $color__item-hover
+    
+    &__icon
+        align-items: center;
+        display: inline-flex;
+        justify-content: center;
+        color: $grey-light
+        transition: $transition__default
+        background-color: $grey
+        height: inherit
+        border-top-right-radius: 3px
+        border-bottom-right-radius: 3px
+        width: $dropdown-chooser-width
+        cursor: pointer
+
+        &:hover
+            fill: $white
+            background-color: #635E61

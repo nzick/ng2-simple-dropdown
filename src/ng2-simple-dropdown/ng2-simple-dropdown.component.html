@@ -1,5 +1,5 @@
 <div class="ng2-simple-dropdown">
-    <input class="ng2-simple-dropdown__input" [(ngModel)]="value && value.name ? value.name : value" placeholder="{{defaultValue + (items.length === 0 ? isEmpty: '')}}" type="text" disabled>
+    <input class="ng2-simple-dropdown__input" [(ngModel)]="value && value.name ? value.name : value" placeholder="{{defaultValue + (items.length === 0 ? isEmpty: '')}}" type="text" disabled="{{!isEditable}}">
     <i class="ng2-simple-dropdown__icon">
         <svg version="1.1" x="0px" y="0px" viewBox="0 0 240.811 240.811" style="enable-background:new 0 0 240.811 240.811;" xml:space="preserve" width="10px" height="10px">
             <path fill="#C6C6C6" d="M220.088,57.667l-99.671,99.695L20.746,57.655c-4.752-4.752-12.439-4.752-17.191,0   c-4.74,4.752-4.74,12.451,0,17.203l108.261,108.297l0,0l0,0c4.74,4.752,12.439,4.752,17.179,0L237.256,74.859   c4.74-4.752,4.74-12.463,0-17.215C232.528,52.915,224.828,52.915,220.088,57.667z" />

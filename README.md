@@ -26,6 +26,9 @@ this.savedFilter = [
 this.defaultSelectTextProfile = "Please Select";
 ```
 
+`[isEditable]` can be a boolean and defined if dropdown values can be changed
+
+
 ## Installation
 
 Install ng2-simple-dropdown via `npm`

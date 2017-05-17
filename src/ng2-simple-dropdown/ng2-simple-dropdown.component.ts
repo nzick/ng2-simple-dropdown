@@ -25,6 +25,7 @@ export const DROPDOWN_VALUE_ACCESSOR: any = {
 export class SimpleDropdownComponent implements ControlValueAccessor, OnInit {
   @Input() items: Array<any>;
   @Input() defaultValue: string;
+  @Input() isEditable: boolean = false;
 
   selectedValue: Array<any>;
   toggle = false;

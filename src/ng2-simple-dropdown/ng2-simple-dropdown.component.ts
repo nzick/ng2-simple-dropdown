@@ -32,7 +32,7 @@ export class SimpleDropdownComponent implements ControlValueAccessor, OnInit {
 
   @HostListener('document:click', ['$event'])
   onClick(e: Event) {
-    this.toggle = e['path'].indexOf(this._elRef.nativeElement) === -1 ? false : !this.toggle;
+    this.toggle = this._elRef.nativeElement !== e.target && !this._elRef.nativeElement.contains((<any>e.target)) ? false : !this.toggle;
   }
 
   constructor(private _elRef: ElementRef) {}

@@ -7,6 +7,7 @@ $size-6: 15px
 $white: #fff
 $grey-light: #DCDADB
 $grey: #414141
+$black: #000
 $transition__default: all .2s ease
 $shadow__small: 0 6px 12px rgba(0,0,0,.175)
 
@@ -33,7 +34,8 @@ $shadow__small: 0 6px 12px rgba(0,0,0,.175)
         padding: 7px 15px 7px 15px
 
         &:disabled
-          color: rgb(84, 84, 84)
+          color: $black
+          background-color: $white
     
     &__content
         z-index: 10 !important
@@ -49,6 +51,7 @@ $shadow__small: 0 6px 12px rgba(0,0,0,.175)
         display: flex
         flex-direction: column
         padding: 5px 0 5px 0
+        left: 0px
 
         hr
             margin: 0

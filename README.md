@@ -5,13 +5,26 @@ Angular2 Dropdown Component with *NO DEPENDENCYS*
 
 ## Demo
 
-![How it looks]()
-
 Try it out: [http://ng2-simple-dropdown.nicolaszick.com](http://ng2-simple-dropdown.nicolaszick.com)
-
 
 ## Data
 
+`[items]` can be an Object like the following:
+
+```js
+this.savedFilter = [
+      {
+        name: 'Profile1', 
+        any: {}
+      }
+]
+```
+
+`[defaultValue]` can be a String like the following:
+
+```js
+this.defaultSelectTextProfile = "Please Select";
+```
 
 ## Installation
 

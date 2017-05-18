@@ -1,27 +1,28 @@
 import { Component } from '@angular/core';
+import { Item } from '../ng2-simple-dropdown/ng2-simple-dropdown.module';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  savedFilter: Array<any> = [];
-  selectedFilter: {};
+  savedFilter: Item[] = [];
+  selectedFilter: Item;
   defaultSelectTextProfile = 'Profiles';
 
   constructor() {
+    const data = { };
     this.savedFilter = [
-      {name: 'Profile1', any: {}},
-      {name: 'Profile2', any: {}},
-      {name: 'Profile3', any: {}},
-      {name: 'Profile4', any: {}},
-      {name: 'Profile5', any: {}},
-      {name: 'Profile6', any: {}},
-      {name: 'Profile7', any: {}},
-      {name: 'Profile8', any: {}},
-      {name: 'Profile9', any: {}},
-      {name: 'Profile10', any: {}},
-      {name: 'Profile11', any: {}},
+      new Item('Profile1'),
+      new Item('Profile2'),
+      new Item('Profile3', data),
+      new Item('Profile4', data),
+      new Item('Profile5', data),
+      new Item('Profile6', data),
+      new Item('Profile7', data),
+      new Item('Profile8', data),
+      new Item('Profile9', data),
+      new Item('Profile10', data),
     ];
   }
 }

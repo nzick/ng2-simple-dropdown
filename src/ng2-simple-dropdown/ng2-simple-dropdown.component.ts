@@ -9,6 +9,16 @@ import {
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
+export class Item {
+  name: string;
+  data: Object;
+
+  constructor(name: string, data?: Object) {
+    this.name = name;
+    this.data = data ? data : {};
+  }
+}
+
 export const DROPDOWN_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => SimpleDropdownComponent),
@@ -23,11 +33,11 @@ export const DROPDOWN_VALUE_ACCESSOR: any = {
 })
 
 export class SimpleDropdownComponent implements ControlValueAccessor, OnInit {
-  @Input() items: Array<any>;
+  @Input() items: Item[];
   @Input() defaultValue: string;
   @Input() isEditable: boolean = false;
 
-  selectedValue: Array<any>;
+  selectedValue: Item;
   toggle = false;
   isEmpty: string;
 
@@ -41,17 +51,18 @@ export class SimpleDropdownComponent implements ControlValueAccessor, OnInit {
   private onTouchedCallback: () => void = () => { };
   private onChangeCallback: (_: any) => void = () => { };
 
-  get value(): Array<any> {
+  get value(): Item {
     return this.selectedValue;
   }
 
-  set value(selectedValue: Array<any>) {
+  set value(selectedValue: Item) {
+    console.log(selectedValue);
     if (!selectedValue) { return; }
     this.selectedValue = selectedValue;
     this.onChangeCallback(selectedValue);
   }
 
-  writeValue(selectedValue: Array<any>) {
+  writeValue(selectedValue: Item) {
     if (!selectedValue) { return; }
     this.selectedValue = selectedValue;
   }

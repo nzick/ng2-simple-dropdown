@@ -28,7 +28,6 @@ export const DROPDOWN_VALUE_ACCESSOR: any = {
 @Component({
   selector: 'ng2-simple-dropdown',
   templateUrl: 'ng2-simple-dropdown.component.html',
-  styleUrls: ['./ng2-simple-dropdown.component.sass'],
   providers: [DROPDOWN_VALUE_ACCESSOR]
 })
 
@@ -56,7 +55,6 @@ export class SimpleDropdownComponent implements ControlValueAccessor, OnInit {
   }
 
   set value(selectedValue: Item) {
-    console.log(selectedValue);
     if (!selectedValue) { return; }
     this.selectedValue = selectedValue;
     this.onChangeCallback(selectedValue);

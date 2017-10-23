@@ -55,7 +55,6 @@ export class SimpleDropdownComponent implements ControlValueAccessor, OnInit {
   }
 
   set value(selectedValue: Item) {
-    console.log(selectedValue);
     if (!selectedValue) { return; }
     this.selectedValue = selectedValue;
     this.onChangeCallback(selectedValue);
